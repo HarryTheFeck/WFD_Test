@@ -1,13 +1,13 @@
 class House:
     def __init__(self, house_number, street, area , num_beds, price):
         self.house_number = house_number
-        self.streat = street
+        self.street = street
         self.area = area
         self.num_beds = num_beds
         self.price = price
 
     def house_info(self):
-        print(f"House Number: {self.house_number}, Street name: {self.street}, Area: {self.area}, Num of Beds: {self.numb_beds}, Price: {self.price}")
+        print(f"House Number: {self.house_number}, Street name: {self.street}, Area: {self.area}, Num of Beds: {self.num_beds}, Price: {self.price}")
 
     def update_house_number(self, new_house_number):
         if isinstance(new_house_number, int):
@@ -33,7 +33,7 @@ class House:
         else:
             print("PLEASE give an actual number of beds")
 
-    def update(self,new_price):
+    def update_price(self,new_price):
         if isinstance(new_price, (int, float)):
             self.price = new_price
         else:
@@ -47,7 +47,7 @@ class RichHouse(House):
         self.garage = garage
 
     def house_info(self):
-        super().display()
+        super().house_info()
         print(f"Pool: {self.pool}, Garage size: {self.garage} cars")
 
     def update_pool(self, new_pool):
@@ -66,4 +66,13 @@ class RichHouse(House):
 house1 = House(45, "Talbot Street", "Dublin 8", 2, 300000)
 richhouse1 = RichHouse(89, "Dawson Street", "Dublin 1", 6, 950000, True, 5)
 
-    
+house1.house_info()
+richhouse1.house_info()
+
+house1.update_price(360000)
+house1.update_num_beds(3)
+richhouse1.update_pool(False)
+richhouse1.update_garage(6)
+
+house1.house_info()
+richhouse1.house_info()
