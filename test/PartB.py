@@ -34,3 +34,34 @@ class TestHouse(unittest.TestCase):
 
 #B5
 
+    def test_update_house_number(self):
+        self.house.update_house_number(50)
+        self.assertEqual(self.house.house_number, 50)
+    
+    def test_update_street(self):
+        self.house.update_street("Grafton Street")
+        self.assertEqual(self.house.street, "Grafton Street")
+    
+    def test_update_area(self):
+        self.house.update_area("Dublin 2")
+        self.assertEqual(self.house.area, "Dublin 2")
+    
+    def test_update_num_beds(self):
+        self.house.update_num_beds(3)
+        self.assertEqual(self.house.num_beds, 3)
+    
+    def test_update_price(self):
+        self.house.update_price(360000)
+        self.assertEqual(self.house.price, 360000)
+    
+    def test_update_pool(self):
+        self.richhouse.update_pool(False)
+        self.assertFalse(self.richhouse.pool)
+    
+    def test_update_garage(self):
+        self.richhouse.update_garage(6)
+        self.assertEqual(self.richhouse.garage, 6)
+
+#B6
+if __name__ == "__main__":
+    unittest.main()
