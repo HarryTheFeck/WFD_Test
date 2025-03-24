@@ -62,6 +62,6 @@ class TestHouse(unittest.TestCase):
         self.richhouse.update_garage(6)
         self.assertEqual(self.richhouse.garage, 6)
 
-#B6
+# B6
 if __name__ == "__main__":
     unittest.main()
