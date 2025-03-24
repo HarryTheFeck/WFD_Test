@@ -40,4 +40,30 @@ class House:
             print("Insert an actual number")
 
 
+class RichHouse(House):
+    def __init__(self, house_number, street, area, num_beds, price, pool, garage):
+        super().__init__(house_number, street, area, num_beds, price)
+        self.pool = pool
+        self.garage = garage
+
+    def house_info(self):
+        super().display()
+        print(f"Pool: {self.pool}, Garage size: {self.garage} cars")
+
+    def update_pool(self, new_pool):
+        if isinstance(new_pool, bool):
+            self.pool = new_pool
+        else:
+            print("Invalid response")
+
+    def update_garage(self, new_garage):
+        if isinstance(new_garage, int):
+            self.garage = new_garage
+        else:
+            print("Please input a valid amount of cars")
+
+    
+house1 = House(45, "Talbot Street", "Dublin 8", 2, 300000)
+richhouse1 = RichHouse(89, "Dawson Street", "Dublin 1", 6, 950000, True, 5)
+
     
