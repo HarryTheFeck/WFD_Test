@@ -16,10 +16,10 @@ class TestHouse(unittest.TestCase):
 
 
 #B3
-    def test_no_instance_of_house(self):
-        self.assertNotIsInstance(self.house, RichHouse)
-
     def test_no_instance_of_richhouse(self):
+        self.assertNotIsInstance(self.house, RichHouse)
+    
+    def test_no_instance_of_house(self):
         self.assertNotIsInstance(self.richhouse, House)
 
 #B4
